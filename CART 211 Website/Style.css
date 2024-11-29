@@ -1,0 +1,723 @@
+
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --highlight-color: #1e1e1e;
+}
+body {
+  margin: 0;
+  background-color: #cbcbbd;
+  font-family: var(--default-font-family);
+  scroll-behavior: smooth;
+  /* Image Styling to Prevent Stretching */
+img {
+  width: 100%; /* The image will fill its container's width */
+  height: auto; /* Height will adjust automatically to maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers its container without distortion */
+}
+
+}
+/* Shared Section Properties */
+.section {
+  width: 100%;
+  max-width: 1280px;
+  min-height: 832px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 50px 0;
+}
+/* SOHKO Section */
+.sohko-section {
+  background-color: #cbcbbd;
+}
+.text {
+  font-family: 'Xeola Demo Version', var(--default-font-family);
+  font-size: 550px;
+  color: #cbcbbd;
+  position: absolute;
+  top: -150px;
+  left: -30px;
+  white-space: nowrap;
+  z-index: 1;
+  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2), -2px -2px 3px rgba(255, 255, 255, 0.5);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
+  transition: transform 0.4s ease, text-shadow 0.4s ease;
+}
+.wrapper {
+  width: 80%;
+  max-width: 1073px;
+  height: 53px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000; /* Keep navigation above all */
+}
+/* Navigation */
+.wrapper {
+  width: 1073px;
+  height: 53px;
+  position: absolute;
+  top: 70%; /* Positioning the navigation below "SOHKO" */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+.text-2, .text-3, .text-4 {
+  font-family: 'Xeola Demo Version', var(--default-font-family);
+  font-size: 50px;
+  color: #cbcbbd;
+  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15), -1px -1px 2px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+.text-2:hover, .text-3:hover, .text-4:hover {
+  color: var(--highlight-color);
+  text-decoration: none; /* Remove underline */
+}
+.text-2:hover, .text-3:hover, .text-4:hover {
+  color: var(--highlight-color);
+}
+/* ABYSS Section */
+.abyss-section {
+  background-color: #cbcbbd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.abyss-content h1, .abyss-content h2 {
+  color: var(--highlight-color);
+  font-family: 'Remjoo', sans-serif;
+  text-align: center;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+/* Font Sizes */
+.beware {
+  font-size: 400px;
+  font-weight: 400;
+}
+.of-the {
+  font-size: 200px;
+  font-weight: 400;
+}
+.abyss {
+  font-size: 450px;
+  font-weight: 400;
+}
+/* Forward Animation (scrolling down) */
+.animate-forward .beware, .animate-forward .of-the, .animate-forward .abyss {
+  opacity: 1;
+  transform: translateY(0);
+}
+.animate-reverse .beware, .animate-reverse .of-the, .animate-reverse .abyss {
+  opacity: 0;
+  transform: translateY(100px);
+}body {
+  margin: 0;
+  padding: 0;
+  background: #CBCBBE;
+}
+.story-section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #CBCBBE;
+}
+/* Story Title */
+.story-title {
+  position: absolute;
+  width: 602px;
+  height: 217px;
+  left: 652px;
+  top: 36px;
+  font-family: 'Remjoo', sans-serif;
+  font-size: 220px;
+  color: #1E1E1E;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+/* Images */
+.story-image-large {
+  width: 512px;
+  height: 728px;
+  position: absolute;
+  left: 63px;
+  top: 36px;
+  border: 5px solid #787866;
+}
+.story-image-small {
+  width: 349px;
+  height: 454px;
+  position: absolute;
+  left: 255px;
+  top: 336px;
+  border: 5px solid #787866;
+}
+/* Text Blocks */
+.story-text {
+  position: absolute;
+  width: 271px;
+  height: 156px;
+  font-family: 'Qafientola', sans-serif;
+  font-size: 22px;
+  color: #1E1E1E;
+  font-weight: 400;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+.story-text-1 {
+  left: 658px;
+  top: 253px;
+}
+.story-text-2 {
+  left: 664px;
+  top: 641px;
+}
+.story-text-3 {
+  left: 658px;
+  top: 447px;
+}
+.story-text-4 {
+  left: 953px;
+  top: 246px;
+}
+.story-text-5 {
+  left: 959px;
+  top: 634px;
+}
+.story-text-6 {
+  left: 953px;
+  top: 440px;
+}
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --highlight-color: #1e1e1e;
+}
+body {
+  margin: 0;
+  background-color: #CBCBBE;
+  font-family: var(--default-font-family);
+  scroll-behavior: smooth;
+}
+/* Shared Section Properties */
+.section {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 50px 0;
+  position: relative;
+}
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #CBCBBE;
+  font-family: sans-serif;
+}
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #CBCBBE;
+  font-family: sans-serif;
+}
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #CBCBBE;
+}
+/* Sound Section */
+.sound-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #CBCBBE; /* Match the page background */
+}
+
+/* Background "SOUND" Text */
+.background-text {
+  position: absolute;
+  font-size: 550px;
+  color: rgba(30, 30, 30, 0.1);
+  font-family: 'Remjoo', sans-serif;
+  font-weight: 400;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none; /* Prevent interaction with background text */
+}
+
+/* Song Container */
+.song-container {
+  position: relative;
+  width: 637px;
+  height: 680px;
+  background-color: #787866; /* Album container background */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Add depth */
+  border-radius: 10px; /* Rounded corners */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 2;
+}
+
+/* Song Title */
+.song-title {
+  font-size: 30px;
+  color: white;
+  font-family: 'Qafientola', sans-serif;
+  font-weight: 400;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+/* Album Art Container */
+.album-art-container {
+  position: relative;
+  width: 415px;
+  height: 415px;
+  margin-bottom: 20px;
+  overflow: hidden; /* Crop overflowing image */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* Album Art */
+.album-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure proportional scaling */
+  border-radius: 8px; /* Match container’s rounded corners */
+}
+
+/* Control Buttons */
+.controls {
+  display: flex;
+  gap: 30px; /* Spacing between buttons */
+  margin-top: 20px;
+}
+
+.control {
+  width: 60px; /* Set consistent size for controls */
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.2s ease; /* Add interactivity */
+}
+
+.control:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.control img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensure images fit inside controls */
+  border-radius: 50%; /* Optional: Make buttons circular */
+}
+
+
+/* Individual Control Buttons */
+.control {
+  width: 60px; /* Adjust as needed */
+  height: 60px;
+  background: none; /* Remove background color */
+  border: none; /* Remove border */
+  box-shadow: none; /* Remove shadow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Play Button (Larger Center Button) */
+.play {
+  width: 80px; /* Slightly larger play button */
+  height: 80px;
+}
+
+/* Button Icons */
+.previous::before, .next::before, .play::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+/* Additional Button Icon Adjustments */
+.previous::before {
+  border-color: transparent white transparent transparent;
+  border-width: 10px 15px 10px 0; /* Arrow size for "Previous" */
+}
+
+.next::before {
+  border-color: transparent transparent transparent white;
+  border-width: 10px 0 10px 15px; /* Arrow size for "Next" */
+}
+
+.play::before {
+  border-color: transparent transparent transparent white;
+  border-width: 15px 0 15px 25px; /* Triangle size for "Play" */
+}
+
+
+
+/* Previous Button Icon */
+.previous::before {
+  border-color: transparent white transparent transparent;
+  border-width: 10px 15px 10px 0; /* Arrow size */
+  margin-left: 0;
+}
+
+/* Next Button Icon */
+.next::before {
+  border-color: transparent transparent transparent white;
+  border-width: 15px 0 15px 25px; /* Arrow size */
+  margin-right: 0;
+}
+
+/* Play Button Icon */
+.play::before {
+  border-color: transparent transparent transparent white;
+  border-width: 15px 0 15px 25px; /* Triangle size */
+  margin-left: 5px;
+}
+
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background: #CBCBBE;
+  font-family: 'Qafientola', sans-serif;
+}
+
+/* Container for the Whole Section */
+.container {
+  width: 1280px;
+  height: 832px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #CBCBBE; /* Light background color */
+  padding-top: 100px;
+  margin: 0 auto;
+}
+
+/* Left section for credits */
+.credits {
+  width: 50%;
+}
+/* Each role section with name and horizontal line */
+.role {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  font-size: 22px;
+  font-family: 'Qafientola', sans-serif;
+}
+.role span {
+  color: #1E1E1E;
+}
+/* Horizontal line between role and name */
+.role .line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: black;
+  margin: 0 10px;
+}
+.role .name {
+  color: #1E1E1E;
+}
+/* Right section for main text and title */
+.main-text {
+  width: 35%;
+  text-align: left;
+}
+/* Large titles for "Beware" and "Abyss" */
+.main-text h1 {
+  font-family: 'Remjoo', sans-serif;
+  font-size: 50px;
+  color: black;
+  margin: 0;
+  line-height: 1;
+}
+/* Smaller text for "of the" */
+.main-text h2 {
+  font-family: 'Remjoo', sans-serif;
+  font-size: 80px;
+  color: #787866;
+  margin: 0;
+  line-height: 1;
+}
+/* Paragraph text below titles */
+.main-text p {
+  font-family: 'Qafientola', sans-serif;
+  font-size: 24px;
+  color: black;
+  margin-top: 30px;
+  line-height: 1.5;
+}
+/* "Thank you" text at the bottom */
+.thank-you {
+  font-family: 'Qafientola', sans-serif;
+  font-size: 22px;
+  color: #1E1E1E;
+  margin-top: 50px;
+  text-align: left;
+  letter-spacing: 3px;
+}
+/* Main container for the "About Me" section */
+.about-section {
+  width: 100%;
+  height: 100vh;
+  background-color: #CBCBBE;
+  position: relative;
+  padding: 50px 0;
+}
+/* Large "About Me" background text at the top and middle */
+.about-background {
+  position: absolute;
+  color: #787866;
+  font-size: 275px;
+  font-family: 'Remjoo', sans-serif;
+  font-weight: 400;
+  left: 95px;
+  top: 70px;
+  line-height: 1;
+}
+.about-background-lower {
+  top: 290px; /* Adjusted lower position */
+  left: 90px;
+}
+/* Smaller descriptive text */
+.about-description {
+  position: absolute;
+  left: 135px;
+  top: 600px;
+  color: #787866;
+  font-size: 24px;
+  font-family: 'Qafientola', sans-serif;
+  font-weight: 400;
+  width: 484px;
+}
+
+/* Outer frame for the image */
+.about-image-frame {
+  width: 514px;
+  height: 423px;
+  background-color: #787866; /* Frame background */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25); /* Deeper shadow for emphasis */
+  border: 3px solid #CBCBBE; /* Subtle contrast with the background */
+  border-radius: 10px; /* Rounded corners for a softer feel */
+  overflow: hidden; /* Prevent overflow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Center the frame horizontally */
+}
+
+/* Actual image styling */
+.about-image {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Fills the frame while maintaining proportions */
+}
+
+/* Artist name below the image */
+.artist-name {
+  margin-top: 20px;
+  color: #1E1E1E; /* Darker, sharp text color */
+  font-size: 26px; /* Slightly larger font size */
+  font-family: 'Qafientola', sans-serif;
+  font-weight: 600; /* Slightly bolder for emphasis */
+  letter-spacing: 1.5px; /* Increased spacing for an elegant feel */
+  text-align: center; /* Center the name text */
+}
+
+/* Artist role below the name */
+.artist-title {
+  margin-top: 10px;
+  color: #A9A9A9; /* Softer gray for less emphasis */
+  font-size: 18px; /* Subtle font size */
+  font-family: 'Qafientola', sans-serif;
+  font-weight: 400; /* Regular weight */
+  text-transform: uppercase; /* Add a professional touch */
+  text-align: center; /* Center align the text */
+  letter-spacing: 1px;
+}
+.gallery-section {
+  padding: 60px 20px;
+  background-color: #CBCBBE; /* Match the current background */
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack title and grid vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.gallery-title {
+  font-size: 70px;
+  font-family: 'Remjoo', sans-serif;
+  color: #1E1E1E;
+  margin-bottom: 50px; /* Space between the title and the gallery */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  gap: 20px; /* Space between items */
+  max-width: 1200px; /* Restrict the grid width */
+  width: 100%; /* Ensure the grid takes up available space */
+  margin: 0 auto; /* Center the grid horizontally */
+  justify-content: center; /* Align grid items centrally */
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; /* Rounded corners */
+  background-color: #EDEDED; /* Optional: Background placeholder color */
+  display: flex; /* Ensure consistent alignment */
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 500px; /* Maintain aspect ratio */
+  display: block;
+  object-fit: cover; /* Prevent distortion */
+  border-radius: 10px; /* Match parent container */
+}
+
+/* Hover Effects */
+.gallery-item:hover {
+  transform: scale(1.05); /* Slight zoom-in effect */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add depth on hover */
+}
+
+
+/* Lightbox Styles */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
+/* Interactive Footer */
+.interactive-footer {
+  position: relative;
+  background-color: #CBCBBE; /* Match the page background */
+  padding: 80px 20px;
+  text-align: center;
+  overflow: hidden; /* Keep everything within bounds */
+  border-top: 1px solid #1E1E1E; /* Subtle border */
+  font-family: 'Remjoo', sans-serif;
+}
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+.footer-heading {
+  font-size: 36px;
+  color: #787866;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease; /* For parallax */
+  text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-link {
+  font-size: 18px;
+  color: #1E1E1E;
+  text-decoration: none;
+  position: relative;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover animations */
+}
+.footer-link::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #1E1E1E;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.footer-link:hover {
+  color: var(--highlight-color); /* Use site’s highlight color */
+}
+.footer-link:hover::before {
+  width: 100%; /* Underline expands */
+  left: 0;
+}
+/* Animated Background Elements */
+.interactive-footer::before, .interactive-footer::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
+  z-index: 1;
+  opacity: 0.8;
+  animation: footer-bg 10s linear infinite;
+}
+.interactive-footer::before {
+  top: -50%;
+  left: -50%;
+  animation-direction: alternate;
+}
+.interactive-footer::after {
+  bottom: -50%;
+  right: -50%;
+  animation-direction: alternate-reverse;
+}
+/* Keyframes for Animated Background */
+@keyframes footer-bg {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+

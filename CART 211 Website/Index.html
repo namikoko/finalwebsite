@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOHKO Interactive Page</title>
+    <link rel="stylesheet" href="Style.css" />
+</head>
+<body>
+    <!-- First Section: SOHKO -->
+    <div class="section sohko-section">
+        <span class="text">SOHKO</span>
+        <div class="wrapper">
+            <a href="#story-section" class="text-2">STORY</a>
+            <a href="#gallery-section" class="text-3">GALLERY</a>
+            <a href="#sound-section" class="text-4">SOUND</a>
+        </div>
+    </div>
+
+    <!-- Story Section -->
+    <section id="story-section" class="section story-section">
+        <img class="story-image-large" src="./Images/pose4.jpeg" alt="Story Image Large" />
+        <img class="story-image-small" src="./Images/pose5.jpeg" alt="Story Image Small" />
+        
+        <!-- Story Title -->
+        <div class="story-title">Story</div>
+        
+        <!-- Text Blocks -->
+        <div class="story-text story-text-1"> Beware of the Abyss explores the challenges and growth of early adulthood through music and visuals. </div>
+        <div class="story-text story-text-2">  It reflects themes of self-discovery, resilience, and finding light after darkness.</div>
+ <div class="story-text story-text-3"> Produced using FL Studio and BandLab, the EP features three instrumentals inspired by personal life stories and lessons learned </div>
+        <div class="story-text story-text-4"> The project captures the bittersweet beauty of growing up, embracing both the struggles and triumphs along the way.</div>
+        <div class="story-text story-text-5">   </div>
+    </section>
+          
+    <!-- Sound Section -->
+    <section id="sound-section" class="section sound-section">
+        <div class="background-text">SOUND</div>
+        <div class="song-container">
+          <h2 id="songTitle" class="song-title">SONG TITLE</h2>
+          <div class="album-art-container">
+            <img class="album-art" src="./Images/pose3.jpeg" alt="Album Art" />
+          </div>
+          <audio id="audioPlayer"></audio>
+          <div class="controls">
+            <img id="previousButton" class="control previous" src="./Images/return.png" alt="Previous Button" />
+            <img id="playButton" class="control play" src="./Images/play.png" alt="Play Button" />
+            <img id="nextButton" class="control next" src="./Images/skip.png" alt="Next Button" />
+          </div>
+        </div>
+    </section>
+  
+    <!-- Gallery Section -->
+    <section id="gallery-section" class="section gallery-section">
+        <div class="gallery-title">Gallery</div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="./Images/paint1.jpeg" alt="Gallery Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="./Images/draw3.jpeg" alt="Gallery Image 2">
+            </div>
+            <div class="gallery-item">
+                <img src="./Images/tat1.jpeg" alt="Gallery Image 3">
+            </div>
+            <div class="gallery-item">
+                <img src="./Images/paint2.jpeg" alt="Gallery Image 4">
+            </div>
+            <div class="gallery-item">
+                <img src="./Images/draw4.jpeg" alt="Gallery Image 5">
+            </div>
+            <div class="gallery-item">
+                <img src="./Images/tat2.jpeg" alt="Gallery Image 6">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="interactive-footer">
+        <div class="footer-content">
+          <h2 class="footer-heading">THANK YOU FOR VISITING</h2>
+          <div class="footer-links">
+            <a href="https://www.instagram.com/bewareoftheabysss/" target="_blank" class="footer-link">Instagram</a>
+            <a href="mailto:joliesracines@gmail.com" class="footer-link">Email</a>
+          </div>
+        </div>
+    </footer>
+
+    <script>
+        // SOHKO Parallax Animation
+        const sohkoText = document.querySelector('.text');
+        document.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+            sohkoText.style.transform = `perspective(1000px) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        document.addEventListener('mouseleave', () => {
+            sohkoText.style.transform = `perspective(1000px) rotateY(0deg) rotateX(0deg)`;
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Music Player
+        const playlist = [
+            { title: "Stark", src: "./Sounds/Stark.mp3" },
+            { title: "Apple Trees", src: "./Sounds/Apple trees.mp3" },
+            { title: "When", src: "./Sounds/When.mp3" }
+        ];
+        let currentTrackIndex = 0;
+
+        const audioPlayer = document.getElementById("audioPlayer");
+        const playButton = document.getElementById("playButton");
+        const nextButton = document.getElementById("nextButton");
+        const previousButton = document.getElementById("previousButton");
+        const songTitleElement = document.getElementById("songTitle");
+
+        // Load first track
+        function loadTrack(index) {
+            const track = playlist[index];
+            audioPlayer.src = track.src;
+            songTitleElement.textContent = track.title;
+        }
+        loadTrack(currentTrackIndex);
+
+        // Play/Pause
+        playButton.addEventListener("click", () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playButton.src = "./Images/pause.png";
+            } else {
+                audioPlayer.pause();
+                playButton.src = "./Images/play.png";
+            }
+        });
+
+        // Next Track
+        nextButton.addEventListener("click", () => {
+            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+            loadTrack(currentTrackIndex);
+            audioPlayer.play();
+            playButton.src = "./Images/pause.png";
+        });
+
+        // Previous Track
+        previousButton.addEventListener("click", () => {
+            currentTrackIndex =
+                (currentTrackIndex - 1 + playlist.length) % playlist.length;
+            loadTrack(currentTrackIndex);
+            audioPlayer.play();
+            playButton.src = "./Images/pause.png";
+        });
+
+        // Auto-next when track ends
+        audioPlayer.addEventListener("ended", () => {
+            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+            loadTrack(currentTrackIndex);
+            audioPlayer.play();
+        });
+    </script>
+</body>
+</html>
